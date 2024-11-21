@@ -1,11 +1,11 @@
 import './GridItem.css'
 
-export default function GridItem(){
-    return(
-        <div class="grid-item tile-64">
+export default function GridItem({value}){
+    return (
+        <div className={`grid-item tile-${value}`}>
             <span>
-                0
+                {value}
             </span>
-        </div>        
-    )
+        </div>
+    );
 }

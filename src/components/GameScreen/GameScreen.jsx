@@ -6,7 +6,7 @@ import Logo from "./Logo/Logo"
 import "./GameScreen.css"
 function GameScreen(){
     const [position, setPosition] = useState({ x: 0, y: 0 });
-
+    const [keyPressed, setKeyPressed] = useState(null);
 
     const handleKeyDown = (event) => {
         switch (event.key) {
@@ -27,9 +27,19 @@ function GameScreen(){
         }
     };
 
+    const handleKeyUp = () => {
+        setKeyPressed(null);
+      };
+
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown);
-      }, []);
+        window.addEventListener("keyup", handleKeyUp);
+    
+        return () => {
+          window.removeEventListener("keydown", handleKeyDown);
+          window.removeEventListener("keyup", handleKeyUp);
+        };
+      }, [keyPressed]); 
 
     return(
         <div className="container">
@@ -39,6 +49,7 @@ function GameScreen(){
             </div>
             <Grid></Grid>
         </div>
+        
     )
 }
 

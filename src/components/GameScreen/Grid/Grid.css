@@ -9,12 +9,3 @@
     width: 80%;
 }
   
-.grid-item {
-    background-color: #dee2e6; /* Example color */
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px; /* Adjust height as needed */
-    border-radius: 5%;
-  }
