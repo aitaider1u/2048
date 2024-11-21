@@ -1,0 +1,31 @@
+.score-container{
+    width: 60%;
+    background-color: #ced4da;
+    border-radius: 2%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.score-title{
+    position: absolute;
+    left: 0;
+    top:-30px;
+    padding-left: 15px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.579);
+}
+
+.score-info{
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.579);
+    font-weight: 600;
+}

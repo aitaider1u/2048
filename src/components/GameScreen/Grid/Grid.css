@@ -1,0 +1,20 @@
+.grid-container {
+    background-color: #ced4da;
+    padding: 10px;
+    border-radius: 2%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-rows: repeat(4, 1fr);   /* 4 equal rows */
+    gap: 10px; /* Space between items */
+    width: 80%;
+}
+  
+.grid-item {
+    background-color: #dee2e6; /* Example color */
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust height as needed */
+    border-radius: 5%;
+  }

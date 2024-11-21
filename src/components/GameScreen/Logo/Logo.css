@@ -1,0 +1,16 @@
+.logo-container{
+    width: 105px;
+    height: 65px;
+    background-color: #cba219;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-title{
+    text-align: center;
+    font-size: 40px;
+    color: aliceblue;
+    font-weight: bold;
+}
