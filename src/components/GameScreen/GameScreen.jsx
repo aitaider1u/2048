@@ -2,13 +2,21 @@ import { useEffect, useState } from "react"
 import Grid from "./Grid/Grid"
 import Score from "./Score/Score"
 import Logo from "./Logo/Logo"
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, incrementByAmount } from './../../features/counterSlice';
+
+
 
 import "./GameScreen.css"
 function GameScreen(){
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [keyPressed, setKeyPressed] = useState(null);
+    
+    const count = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch();
 
     const handleKeyDown = (event) => {
+        dispatch(increment())
         switch (event.key) {
             case "ArrowUp":
             setPosition((prev) => ({ ...prev, y: prev.y - 1 }));
@@ -34,7 +42,6 @@ function GameScreen(){
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown);
         window.addEventListener("keyup", handleKeyUp);
-    
         return () => {
           window.removeEventListener("keydown", handleKeyDown);
           window.removeEventListener("keyup", handleKeyUp);
@@ -42,6 +49,7 @@ function GameScreen(){
       }, [keyPressed]); 
 
     return(
+        <>
         <div className="container">
             <div className="info-container">
                 <Score></Score>
@@ -49,6 +57,7 @@ function GameScreen(){
             </div>
             <Grid></Grid>
         </div>
+        </>
         
     )
 }
