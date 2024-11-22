@@ -1,8 +1,8 @@
 {
   "name": "2048",
   "private": true,
-  "version": "0.0.1",
-  "homepage": "https://aitaider1u/github.io/2048",
+  "version": "0.0.2",
+  "homepage": "https://aitaider1u.github.io/2048",
   "type": "module",
   "scripts": {
     "dev": "vite",
