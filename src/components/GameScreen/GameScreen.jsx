@@ -4,8 +4,8 @@ import Score from "./Score/Score"
 import Logo from "./Logo/Logo"
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, incrementByAmount } from './../../features/counterSlice';
-
-
+import { move } from './../../features/gameStateSlice';
+import { Direction } from './../../utils/constant';
 
 import "./GameScreen.css"
 function GameScreen(){
@@ -16,24 +16,23 @@ function GameScreen(){
     const dispatch = useDispatch();
 
     const handleKeyDown = (event) => {
-        dispatch(increment())
         switch (event.key) {
             case "ArrowUp":
-            setPosition((prev) => ({ ...prev, y: prev.y - 1 }));
-            break;
+                dispatch(move(Direction.UP));
+                break;
             case "ArrowDown":
-            setPosition((prev) => ({ ...prev, y: prev.y + 1 }));
-            break;
+                dispatch(move(Direction.DOWN));
+                break;
             case "ArrowLeft":
-            setPosition((prev) => ({ ...prev, x: prev.x - 1 }));
-            break;
+                dispatch(move(Direction.LEFT));
+                break;
             case "ArrowRight":
-            setPosition((prev) => ({ ...prev, x: prev.x + 1 }));
-            break;
+                dispatch(move(Direction.RIGHT));
+                break;
             default:
-            break;
-        }
-    };
+                break;
+        };
+    }
 
     const handleKeyUp = () => {
         setKeyPressed(null);
